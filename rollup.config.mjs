@@ -4,7 +4,7 @@ const typescript = require('@rollup/plugin-typescript');
 const { babel } = require('@rollup/plugin-babel');
 const postcss = require('rollup-plugin-postcss');
 const { terser } = require('rollup-plugin-terser');
-const dts = require('rollup-plugin-dts').default;  // Importing default export
+const dts = require('rollup-plugin-dts').default;
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 
 const packageJson = require('./package.json');
@@ -49,9 +49,9 @@ module.exports = [
     external: ['react', 'react-dom'],
   },
   {
-    input: 'dist/types/src/index.d.ts', // Ensure this path is correct
+    input: 'dist/types/src/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts()],  // Using dts() after importing default
+    plugins: [dts()],
     external: [/\.css$/],
   },
 ];

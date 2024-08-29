@@ -13,7 +13,8 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "rollup -c --bundleConfigAsCjs",
+    "clean" : "rm -rf dist",
+    "build": "npm run clean && npx tsc && rollup -c --bundleConfigAsCjs",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
